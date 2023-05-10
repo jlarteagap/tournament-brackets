@@ -1,9 +1,12 @@
 import Image from 'next/image'
 import styles from './page.module.css'
 
+import 'bulma/css/bulma.min.css'
+import { CreateTournament } from './components/tournament/CreateTournament'
 export default function Home() {
   return (
     <main className={styles.main}>
+      <CreateTournament label="label" />
       <div className={styles.description}>
         <p>
           Get started by editing&nbsp;
