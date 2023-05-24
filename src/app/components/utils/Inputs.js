@@ -22,7 +22,6 @@ export const InputFields = ({ label, ...props }) => {
 }
 
 export const SelectInput = ({ options, ...props }) => {
-  console.log(options)
   const [field, meta] = useField(props)
   return (
     <div className="mt-3">
@@ -58,6 +57,8 @@ export const TextareaInput = ({ label, ...props }) => {
       <label>{label}</label>
       <textarea
         className={`textarea ${meta.touched && meta.error && 'is-danger'}`}
+        {...field}
+        {...props}
       ></textarea>
       <ErrorMessage
         component="div"

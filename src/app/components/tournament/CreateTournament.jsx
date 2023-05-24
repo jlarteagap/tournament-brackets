@@ -1,9 +1,9 @@
 'use client'
 
 import React from 'react'
-import { InputFields, SelectInput, TextareaInput } from '../utils/Inputs'
 import * as Yup from 'yup'
 import { Form, Formik } from 'formik'
+import { FormCreateTournament } from './FormCreateTournament'
 
 export const CreateTournament = () => {
   const validate = Yup.object({
@@ -12,7 +12,9 @@ export const CreateTournament = () => {
   return (
     <Formik
       initialValues={{
-        name: ''
+        name: '',
+        typeTournament: '',
+        description: ''
       }}
       validationSchema={validate}
       onSubmit={values => {
@@ -21,13 +23,7 @@ export const CreateTournament = () => {
     >
       {formik => (
         <Form>
-          <InputFields label="Tournament name" name="name" />
-          <SelectInput
-            name="type"
-            options={[{ value: 'Elimination simple' }]}
-          />
-          <TextareaInput label="Description" name="description" />
-          <button className="button is-success mt-3">Enviar</button>
+          <FormCreateTournament />
         </Form>
       )}
     </Formik>
