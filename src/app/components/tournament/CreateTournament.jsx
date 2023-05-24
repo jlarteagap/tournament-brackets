@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import { InputFields } from '../utils/Inputs'
+import { InputFields, SelectInput, TextareaInput } from '../utils/Inputs'
 import * as Yup from 'yup'
 import { Form, Formik } from 'formik'
 
@@ -21,8 +21,13 @@ export const CreateTournament = () => {
     >
       {formik => (
         <Form>
-          <InputFields label="Agregar nombre del torneo" name="name" />
-          <button className="button is-success">Enviar</button>
+          <InputFields label="Tournament name" name="name" />
+          <SelectInput
+            name="type"
+            options={[{ value: 'Elimination simple' }]}
+          />
+          <TextareaInput label="Description" name="description" />
+          <button className="button is-success mt-3">Enviar</button>
         </Form>
       )}
     </Formik>
