@@ -3,7 +3,7 @@ import { InputFields, SelectInput, TextareaInput } from '../utils/Inputs'
 export const FormCreateTournament = () => {
   return (
     <>
-      <InputFields label="Tournament name" name="name" />
+      <InputFields label="Tournament name" name="name" type="text" />
       <SelectInput
         name="typeTournament"
         type="select"

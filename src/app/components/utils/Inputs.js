@@ -32,20 +32,24 @@ export const SelectInput = ({ options, ...props }) => {
           {...props}
           className={`${meta.touched && meta.error && 'is-danger'}`}
         >
+          <option defaultValue="" value="" label="--">
+            - -
+          </option>
           {options.map((option, index) => {
             return (
               <option value={option.value} label={option.value} key={index}>
-                {option.text}
+                {option.value}
               </option>
             )
           })}
         </select>
-        <ErrorMessage
-          component="div"
-          name={field.name}
-          className="help is-danger"
-        />
       </div>
+
+      <ErrorMessage
+        component="div"
+        name={field.name}
+        className="help is-danger"
+      />
     </div>
   )
 }
