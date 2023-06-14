@@ -1,8 +1,8 @@
 'use client'
 import React, { useState } from 'react'
 
-export const Bracket = () => {
-  const [selectedParticipant, setSelectedParticipant] = useState(0)
+export const Bracket = ({ player1, player2 }) => {
+  const [selectedParticipant, setSelectedParticipant] = useState(null)
 
   const handleClickParticipant = participant => {
     setSelectedParticipant(participant)
@@ -13,16 +13,16 @@ export const Bracket = () => {
       <div
         className="button is-success is-outlined my-2"
         onClick={() => handleClickParticipant(1)}
-        disabled={selectedParticipant > 1}
+        disabled={selectedParticipant === 2}
       >
-        Participant 1
+        {player1}
       </div>
       <div
-        className="button is-warning is-outlined my-2"
+        className="button is-danger is-outlined my-2"
         onClick={() => handleClickParticipant(2)}
         disabled={selectedParticipant === 1}
       >
-        Participant 2
+        {player2}
       </div>
     </div>
   )
