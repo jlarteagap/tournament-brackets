@@ -23,7 +23,16 @@ export const OrderPairs = () => {
     <>
       {participants.map((participant, i) => {
         return (
-          <div className={`${i}`} key={i}>
+          <div
+            className={`${i} ${i / 2 === 0 && 'doble'}`}
+            key={i}
+            style={{
+              borderColor: 'white',
+              padding: '1rem',
+              borderStyle: 'solid',
+              borderBlockWidth: '1px'
+            }}
+          >
             {participant}
           </div>
         )
